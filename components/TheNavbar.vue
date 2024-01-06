@@ -149,10 +149,8 @@ const route = useRoute();
 const tagId = ref();
 const activeHash = ref(route.hash || "");
 const updateHash = (id: string) => {
-  if (process.client) {
-    window.history.pushState(null, "", "#" + id);
-    activeHash.value = "#" + id;
-  }
+  window.history.pushState(null, "", "#" + id);
+  activeHash.value = "#" + id;
 };
 onMounted(() => {
   $gsap.registerPlugin(ScrollToPlugin);

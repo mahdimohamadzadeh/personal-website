@@ -1,12 +1,10 @@
 <template>
   <div>
+    <app-loading-animate v-if="loading"></app-loading-animate>
     <NuxtLoadingIndicator />
-    <client-only
-      ><the-back-ground-animation></the-back-ground-animation
-      ><template #placeholder
-        ><app-loading-animate></app-loading-animate>
-      </template>
-    </client-only>
+    <the-back-ground-animation
+      @onLoading="onLoading"
+    ></the-back-ground-animation>
     <section class="min-h-screen t-col">
       <the-navbar />
       <div class="flex flex-col flex-1">
@@ -16,6 +14,14 @@
     </section>
   </div>
 </template>
+
+<script setup>
+const loading = ref(true);
+
+const onLoading = () => {
+  loading.value = false;
+};
+</script>
 
 <style>
 ::-webkit-scrollbar {

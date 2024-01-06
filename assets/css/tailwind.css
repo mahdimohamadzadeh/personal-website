@@ -11,6 +11,7 @@
 @layer components {
   html {
     scroll-behavior: smooth;
+    background-color: black !important;
   }
   body {
     @apply overflow-y-scroll;
