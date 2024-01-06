@@ -181,7 +181,6 @@ onMounted(() => {
   tl.from(window, {
     ease: "power4",
     duration: 1000,
-    autoAlpha: 0,
     x: 0,
     stagger: 0.3,
     onComplete: () => {

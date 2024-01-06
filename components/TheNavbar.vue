@@ -169,7 +169,6 @@ const scrollToID = (id: string) => {
   // router.replace({ hash: "#" + id });
   updateHash(id);
   scrollTo = $gsap.to(window, {
-    autoAlpha: 0,
     ease: "power4.inOut",
     duration: 0.7,
     scrollTo: { y: "#" + id, offsetY: offset, autoKill: true },
